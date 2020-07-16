@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclic="backaddr()"> 뒤로 </button>
+<button onclic="forwaddr()"> 앞으로 </button>
+</body>
+<script>
+history.go(-1)
+function backaddr (){
+	history.go(-1)}
+function forwaddr(){
+	history.go(1)}
+</script>
+</html>
