@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+	div{position:absolute;left:2px;top:2px;}
+</style>
+</head>
+<body>
+	<div style="width:5px;height:5px;background:red"></div>
+</body>
+<script>
+	let cnt=1;
+	document.addEventListener("click",function(e){
+		console.log("클릭이벤트 발생:"+cnt);
+		cnt++;
+		console.log(e);
+	});
+	
+</script>
+</html>

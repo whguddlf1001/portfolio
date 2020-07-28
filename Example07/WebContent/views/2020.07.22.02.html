@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"			>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="target" style = "width:10em; height:10em; background:red"></div>
+	<div id ="result"></div>
+</body>
+<script>
+	let cnt=0;
+	//document.getElementById("target").onmouseover=cb;
+	document.querySelector("#target").addEventListener("mouseover",cb);
+	function cb(){
+		cnt++;
+		let res = document.getElementById("result");
+		res.innerText = "마우스 오버 이벤트 발생 : 콜백함수 실행중"+cnt+"회";
+	}
+</script>
+</html>

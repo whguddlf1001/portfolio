@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="target" style="float:left;width:400px;height:400px;background:yellow; overflow:scroll">
+	<div style="width:10px;height:10px;background:black; position:relative; left:200px;top:200px">
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	 안쪽 스크롤 생성
+</div>
+<div id="result" style="float:left;">
+</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	바깥쪽 스크롤 생성
+</body>
+<script>
+	//screenX,y - 화면기준 (문서와 상관없는 오로지 화면 값만)
+	//pageX,y - 문서기준  (문서 바깥족 document 기준으로 스크롤에 따른 변화)
+	//clientX,y - 창기준 (웹브라우저 창 기준, 스크롤 영향 없음)
+	//offsetX,y - 타겟엘리먼트 기준 (클릭된 타겟 내에서의 클릭좌표-엘리먼트 창기준, 스크롤영황x)
+	result = document.getElementById("target");
+	result = document.getElementById("result");
+	document.addEventListener("click",printEvent)
+	target.addEventListener("click",printEvent,false);
+	function printEvent(e){
+		let str = "";
+		str += "스크린Y: "+e.screenY+"<br>";
+		str += "페이지Y: "+e.pageY+"<br>";
+		str += "클라이언트Y: "+e.clientY+"<br>";
+		str += "오프셋Y: "+e.offsetY+"<br>";
+		str += "내부엘리먼트 위치: "+(e.offsetY+this.scrolltop);
+		str += "+++++++++++++++++++++++++++++<br>";
+		result.innerHTML += str;
+		e.stopPropagation();
+	}
+	
+</script>
+</html>
